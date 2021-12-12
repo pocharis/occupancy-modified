@@ -9,64 +9,72 @@ df <- read.csv("occupancy.csv", header = TRUE)
 
 ui <- fluidPage(
   theme = shinytheme("cerulean"),
-  setBackgroundImage(
-    src = "https://i.ibb.co/z8WR9q9/Untitled-design.png"
-  ),
+  setBackgroundImage(src = "https://i.ibb.co/z8WR9q9/Untitled-design.png"),
   
   navbarPage(
     # theme = "cerulean",  # <--- To use a theme,
     "Building Occupancy Detection",
-    tabPanel("Home", style="color:white; font-size:18px", 
-    fluidRow(
-      column(8, align="center", offset = 2,
-      HTML(
-        "
-     
+    tabPanel("Home", style = "color:#4D4D3D; font-size:18px",
+             fluidRow(column(
+               8,
+               align = "center",
+               offset = 2,
+               HTML(
+                 "
+
         <section class='banner'>
         <h2 class='parallax'>Occupancy prediction using sensor data</h2>
         </section>
           "
-        )
-      )
-    ),
-    
-    fluidRow(
-      column(8, align="center", offset = 2,
-             HTML(
-               "
-     
+               )
+             )), 
+             
+             fluidRow(
+               column(
+                 8,
+                 align = "center",
+                 offset = 2,
+                 HTML(
+                   "
+
         <section class='banner'>
-        <p class='parallax_description'>A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond. A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.A career path pinpoints your next job, the job
-        after that, and beyond.</p>
+        <p class='parallax_description'>
+        
+        
+        
+        </p>
         </section>
           "
-             ),
-             tags$head(tags$style(
-               type="text/css",
-               "#img img {max-width: 80%; width: 80%; height: auto; padding: 20px}"
+                 ),
+                 tags$head(
+                   tags$style(
+                     type = "text/css",
+                     "#img img {max-width: 80%; width: 80%; height: auto; border-radius: 15px;}"
+                   )
+                 ),
+                 uiOutput("img"),
+                 tags$label(style = "background-color:#F0F0EB; border-radius: 15px;width: 80%; padding: 30px; margin:20px; text-align: justify;",HTML(
+                   "
+
+                    <section class='banner' >
+                    <p class='parallax_description' >
+                      A heating, ventilation, and air conditioning system is an integral part of most commercial buildings with many office and communal spaces. 
+                      Augmenting this system with sensors and machine learning predictive models will have a tremendous impact on its efficiency. 
+                      As building energy demand significantly contributes to energy concerns, this improvement in managing energy is pivotal in meeting goals set by energy policy makers. 
+                    </p>
+                    
+                     <p class='parallax_description' >
+                      Considering the diagram in figure 1, the data is preprocessed, fed into a model predictive system and the output is used in controling HVAC systems.
+                      This application is for the simulation of the sensors that take records of attributes such as temperature, light, humidity and CO2 and datetime. 
+                      By using the occupancy
+                    </p>
+                    </section>
+                  "
+                 )),
+                 
+                 
+               )
              )),
-             uiOutput("img")
-             
-             
-      )
-    )
-    ),
     tabPanel(
       "Occupancy Prediction",
       sidebarPanel(
@@ -127,9 +135,9 @@ ui <- fluidPage(
         
         verbatimTextOutput('contents'),
         
-        tags$label(style="background-color:white",tableOutput('tabledata')),
+        tags$label(style = "background-color:#F0F0EB;border-radius:15px; align:center;", tableOutput('tabledata')),
         # Prediction results table
-        htmlOutput(style="background-color:white ; padding:13px;", "explain")
+        htmlOutput(style = "background-color:#F0F0EB ; padding:13px; border-radius: 15px; text-align:justify;", "explain")
         #tags$label(h4('Accuracy Scores with different k-values')),
         #verbatimTextOutput('plotcontents'),
         #plotOutput(outputId = "knnplot")
@@ -158,7 +166,7 @@ ui <- fluidPage(
       
       # Main panel for displaying outputs ----
       mainPanel(# Output: Histogram ----
-                plotOutput(outputId = "distPlot"), style='background-color:white;
+                plotOutput(outputId = "distPlot"), style = 'background-color:#F0F0EB; border-radius: 15px; padding: 16px;
                      '),
       sidebarPanel(
         "The pie plot is used to visualize the percentage of observations for each of the time periods.
@@ -168,9 +176,12 @@ ui <- fluidPage(
       ),
       
       # Main panel for displaying outputs ----
-      mainPanel(# Output: Histogram ----
-                plotOutput(outputId = "piePlot"), style='background-color:white;
-                     margin-top: 10px; margin-bottom: 10px'),
+      mainPanel(
+        # Output: Histogram ----
+        plotOutput(outputId = "piePlot"),
+        style = 'background-color:white;
+                     margin-top: 10px; margin-bottom: 10px; background-color:#F0F0EB; border-radius: 15px; padding: 16px;'
+      ),
       sidebarPanel(
         "Furthermore, the time period distribution for the two classes(occupied and not occupied) can be observed in the barplot.
                     Starting with the first bar, there were more occupancy during the daytime. The second bar goes on to show that in the earlydaytime,
@@ -181,8 +192,8 @@ ui <- fluidPage(
       
       # Main panel for displaying outputs ----
       mainPanel(# Output: Histogram ----
-                plotOutput(outputId = "daytime"), style='background-color:white;
-                     margin-bottom: 10px'),
+                plotOutput(outputId = "daytime"), style = 'background-color:white;
+                     margin-bottom: 10px; background-color:#F0F0EB; border-radius: 15px; padding: 16px;'),
       sidebarPanel(
         "The correllation plot, is used to show the relationship between the data variables.
                     The Light has a strong positive correlation with Occupancy class variable, followed by temperature and CO2.
@@ -193,12 +204,13 @@ ui <- fluidPage(
       
       # Main panel for displaying outputs ----
       mainPanel(# Output: Histogram ----
-                plotOutput(outputId = "corr"), style='background-color:white;
-                      margin-bottom: 50px')
+                plotOutput(outputId = "corr"), style = 'background-color:white;
+                      margin-bottom: 55px; background-color:#F0F0EB; border-radius: 15px; padding: 16px;')
     )#,
     #tabPanel("Navbar 3", "This panel is intentionally left blank")
     
-  ), # navbarPage
+  ),
+  # navbarPage
   tags$head(
     HTML(
       "
@@ -216,8 +228,7 @@ ui <- fluidPage(
           </script>
           "
     )
-  ),textOutput("keepAlive")
+  ),
+  textOutput("keepAlive")
   
 ) # fluidPage
-
-

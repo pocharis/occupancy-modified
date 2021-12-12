@@ -153,8 +153,7 @@ shinyServer(function(input, output, session) {
         paste(
           "This is a simulation to classify the values of the sensor values selected on the left panel. Upon clicking the make prediction button,the prediction result on table above was obtained.",
           "The Prediction will either be 0 or 1, whereas the values for both Non_occupied and Occupied will range from 0 to 1.",
-          "If Non_occupied is greater than Occupied, then the Prediction will be 0 and vice versa.",
-          sep = "<br/>"
+          "If Non_occupied is greater than Occupied, then the Prediction will be 0 and vice versa."
         )
       )
     }
