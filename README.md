@@ -5,5 +5,6 @@ This is a model predictive control for optimizing the performance of heating, ve
 1. Fork or clone this repository as your own
 2. Create an [Heroku account](https://www.heroku.com/)
       1. Create a new  [app ](https://dashboard.heroku.com/apps)
-      2. ![image info](./www/newapp.png)
+      2. ![Alt text](./www/newapp.png)
+      3. ![Screenshot](newapp.PNG)
 4. Which is numbered
