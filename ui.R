@@ -65,12 +65,13 @@ ui <- fluidPage(
                     
                      <p class='parallax_description' >
                       Considering the diagram in figure 1, the data is preprocessed, fed into a model predictive system and the output is used in controling HVAC systems.
-                      This application is for the simulation of the sensors that take records of attributes such as temperature, light, humidity and CO2 and datetime. 
+                      The aim of this application is for the simulation of the sensor values that take records of attributes such as temperature, light, humidity and CO2 and datetime. 
+                      The focus is on the model predictive segment.
                       By using the sliders in the Occpancy Prediction tab, of the app, the values of the sensor can be selected and 
                       the machine learning model will use those values to predict the occupancy status of the office.
                     </p>
                     <p class='parallax_description' >
-                      In the Data exploration tab, some of the attributes used in training the model can also be visualized. 
+                      In the Data exploration tab, some of the attributes used in training the model can also be visualized, the correlation or relationships between them is also explored. 
                     </p>
                     </section>
                   "
