@@ -16,7 +16,7 @@ ui <- fluidPage(
   navbarPage(
     # theme = "cerulean",  # <--- To use a theme,
     "Building Occupancy Detection",
-    tabPanel("Home", style="color:white; font-size:15px", 
+    tabPanel("Home", style="color:white; font-size:18px", 
     fluidRow(
       column(8, align="center", offset = 2,
       HTML(
@@ -57,7 +57,13 @@ ui <- fluidPage(
         </section>
           "
              ),
-             img(src='modd.PNG', style="padding: 30px;", align = "center", height = '280px')
+             tags$head(tags$style(
+               type="text/css",
+               "#img img {max-width: 80%; width: 80%; height: auto; padding: 20px}"
+             )),
+             uiOutput("img")
+             
+             
       )
     )
     ),

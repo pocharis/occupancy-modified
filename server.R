@@ -182,6 +182,11 @@ shinyServer(function(input, output, session) {
     paste(" ")
   })
   
+  
+    output$img <- renderUI({
+      tags$img(src = "https://i.ibb.co/TbDNmBR/modd.png")
+    })
+  
   autoInvalidate <- reactiveTimer(10000)
   observe({
     autoInvalidate()
